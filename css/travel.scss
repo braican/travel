@@ -1,13 +1,54 @@
 /*
- * FONTS
- * ----------
- * font-family: 'Lato', sans-serif;
- * font-family: 'Vollkorn', serif;
- * 
- *
- * COLORS
- * ----------
+ * VARIABLES
  */
+
+// FONTS
+
+$sans-serif: 'Lato', sans-serif;
+$serif: 'Vollkorn', serif;
+
+// COLORS
+
+/*
+ * MIXINS
+ */
+@mixin flexbox() {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+@mixin flex($values) {
+    -webkit-box-flex: $values;
+    -moz-box-flex:  $values;
+    -webkit-flex:  $values;
+    -ms-flex:  $values;
+    flex:  $values;
+}
+
+@mixin order($val) {
+    -webkit-box-ordinal-group: $val;  
+    -moz-box-ordinal-group: $val;     
+    -ms-flex-order: $val;     
+    -webkit-order: $val;
+    order: $val;
+}
+
+@mixin justfiy-content($val){
+    -webkit-justify-content: $val;
+    justify-content:$val;
+}
+
+@mixin box-sizing(){
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+
 
  /* http://meyerweb.com/eric/tools/css/reset/ 
     v2.0 | 20110126
@@ -45,7 +86,7 @@
  }
  body {
     line-height: 1;
-    font-family: 'Vollkorn', serif;
+    font-family: $serif;
  }
  ol, ul {
     list-style: none;
@@ -67,7 +108,7 @@
   * --typography
   * ----------------------------------- */
 h1{
-    font-family: 'Vollkorn', serif;
+    font-family: $serif;
     font-size:4em;
     font-style: italic;
     color: #fff;
@@ -83,11 +124,7 @@ h1{
     margin: 0 auto;
     position: relative;
 
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
+    @include flexbox();
 }
 
 .full-height{
@@ -99,9 +136,7 @@ section{
 
 .col{
     padding: 0 20px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+    @include box-sizing();
 }
 .col-20{
     width: 20%;
@@ -120,8 +155,7 @@ section{
     left: 0;
 }
 .right-aligned{
-    -webkit-justify-content: flex-start;
-    justify-content:flex-end;
+    @include justfiy-content(flex-start);
 }
 
 /* -----------------------------------
