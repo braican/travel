@@ -1,0 +1,124 @@
+/*
+ * FONTS
+ * ----------
+ * font-family: 'Lato', sans-serif;
+ * font-family: 'Vollkorn', serif;
+ * 
+ *
+ * COLORS
+ * ----------
+ */
+
+ /* http://meyerweb.com/eric/tools/css/reset/ 
+    v2.0 | 20110126
+    License: none (public domain)
+ */
+
+ html, body, div, span, applet, object, iframe,
+ h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+ a, abbr, acronym, address, big, cite, code,
+ del, dfn, em, img, ins, kbd, q, s, samp,
+ small, strike, strong, sub, sup, tt, var,
+ b, u, i, center,
+ dl, dt, dd, ol, ul, li,
+ fieldset, form, label, legend,
+ table, caption, tbody, tfoot, thead, tr, th, td,
+ article, aside, canvas, details, embed, 
+ figure, figcaption, footer, header, hgroup, 
+ menu, nav, output, ruby, section, summary,
+ time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+ }
+ /* HTML5 display-role reset for older browsers */
+ article, aside, details, figcaption, figure, 
+ footer, header, hgroup, menu, nav, section {
+    display: block;
+ }
+ html,
+ body{
+    height: 100%;
+ }
+ body {
+    line-height: 1;
+    font-family: 'Vollkorn', serif;
+ }
+ ol, ul {
+    list-style: none;
+ }
+ blockquote, q {
+    quotes: none;
+ }
+ blockquote:before, blockquote:after,
+ q:before, q:after {
+    content: '';
+    content: none;
+ }
+ table {
+    border-collapse: collapse;
+    border-spacing: 0;
+ }
+
+ /* -----------------------------------
+  * --typography
+  * ----------------------------------- */
+h1{
+    font-family: 'Vollkorn', serif;
+    font-size:4em;
+    font-style: italic;
+    width: 40%;
+}
+
+/* -----------------------------------
+ * --layout
+ * ----------------------------------- */
+
+.travel-container{
+    width: 96%;
+    max-width: 1260px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.full-height{
+    height: 100%;
+}
+
+.column-container{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+/* -----------------------------------
+ * --header image
+ * ----------------------------------- */
+.site-header{
+    position: relative;
+    background: url(../img/header.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.site-title{
+    position: absolute;
+    bottom: 200px;
+}
+
+/* -----------------------------------
+ * --captions
+ * ----------------------------------- */
+.caption{
+    padding: 40px 0;
+}
+
+
+
+
+
