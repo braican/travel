@@ -7,17 +7,17 @@ module.exports = function(grunt) {
         concat: {   
             dist: {
                 src: [
-                    'js/lib/*.js', // All JS in the libs folder
-                    'js/travel.js'  // This specific file
+                    'wp-content/themes/travel/js/lib/*.js', // All JS in the libs folder
+                    'wp-content/themes/travel/js/travel.js'  // This specific file
                 ],
-                dest: 'js/build/production.js',
+                dest: 'wp-content/themes/travel/js/build/production.js',
             }
         },
 
         uglify: {
             build: {
-                src: 'js/build/production.js',
-                dest: 'js/build/production.min.js'
+                src: 'wp-content/themes/travel/js/build/production.js',
+                dest: 'wp-content/themes/travel/js/build/production.min.js'
             }
         },
         // imagemin: {
@@ -33,14 +33,14 @@ module.exports = function(grunt) {
 
         watch: {
             scripts: {
-                files: ['js/*.js'],
+                files: ['wp-content/themes/travel/js/*.js'],
                 tasks: ['concat', 'uglify'],
                 options: {
                     spawn: false,
                 },
             } ,
             css: {
-                files: ['css/*.scss', 'css/util/*.scss'],
+                files: ['wp-content/themes/travel/css/*.scss', 'wp-content/themes/travel/css/util/*.scss'],
                 tasks: ['sass'],
                 options: {
                     spawn: false,
@@ -50,10 +50,10 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 options: {
-                    style: 'compressed'
+                    style: 'compact'
                 },
                 files: {
-                    'css/build/travel.css': 'css/travel.scss'
+                    'wp-content/themes/travel/style.css': 'wp-content/themes/travel/css/travel.scss'
                 }
             } 
         }
