@@ -6,7 +6,7 @@
 // FONTS
 
 $sans-serif: 'Lato', sans-serif;
-$serif: 'Vollkorn', serif;
+$serif: 'EB Garamond', serif;
 
 // COLORS
 
@@ -25,6 +25,19 @@ h1{
     color: #fff;
 }
 
+h2{
+    font-family: $sans-serif;
+    font-weight: 300;
+    font-size: 3em;
+    text-transform: uppercase;
+    letter-spacing:.1em;
+    display: inline-block;
+    padding: 10px 20px;
+    position: relative;
+    background: #fff;
+    @include jeet-prefixer(transform, translateY(-50%));
+}
+
 /* -----------------------------------
  * --layout
  * ----------------------------------- */
@@ -39,17 +52,36 @@ h1{
 .full-height{
     height: 100%;
 }
+
 section{
     padding: 40px 0;
+    @include center(100%);
 }
 
-/* positioning */
-.caption-bottom{
-    position: absolute;
-    bottom: 100px;
-    left: 0;
+.col-1-5{
+    @include col(1/5);
 }
-.right-aligned{}
+.col-2-5{
+    @include col(2/5);
+}
+.col-3-5{
+    @include col(3/5);
+}
+.col-4-5{
+    @include col(4/5);
+}
+
+.align-right{
+    text-align: right
+}
+
+.text-one-col{
+    @include shift(1/5);
+}
+.text-two-col{
+    @include jeet-prefixer(column-count, 2);
+    @include jeet-prefixer(column-gap, 3%);
+}
 
 /* -----------------------------------
  * --header
@@ -71,9 +103,11 @@ section{
 
     span{
         color: #fff;
-        border-top: 3px solid #fff;
-        font-family: 'Lato', sans-serif;
+        border-top: 2px solid #fff;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 700;
         font-size: 18px;
+        padding-top: 2px;
     }
 }
 
@@ -81,6 +115,33 @@ section{
  * --captions
  * ----------------------------------- */
 
+.caption{
+    font-family: $sans-serif;
+    font-size: 0.8em;
+    @include col(2/5);
+}
+
+.inline-caption{
+    position: absolute !important;
+    bottom: 100px;
+    left: 0;
+}
+
+.align-right{
+    text-align:right;
+    @include shift(3/5);
+}
+
+/* -----------------------------------
+ * --sidebar
+ * ----------------------------------- */
+.sidebar{
+    @include col(1/3);
+    font-family: $sans-serif;
+    font-size: 0.8em;
+    position: absolute;
+    left: -35%;
+}
 
 /* -----------------------------------
  * --images
@@ -94,7 +155,14 @@ section{
     position: relative;
 }
 
+/* -----------------------------------
+ * --sections
+ * ----------------------------------- */
 
+.section-header{
+    text-align: center;
+    border-top: 1px solid #ccc;
+}
 
 
 

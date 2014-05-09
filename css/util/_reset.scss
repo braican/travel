@@ -38,8 +38,9 @@ body{
     height: 100%;
 }
 body {
-    line-height: 1;
     font-family: $serif;
+    font-size: 20px;
+    line-height: 1.4;
 }
 ol, ul {
     list-style: none;
@@ -55,4 +56,7 @@ q:before, q:after {
 table {
     border-collapse: collapse;
     border-spacing: 0;
+}
+p{
+    margin-bottom: 1em;
 }
