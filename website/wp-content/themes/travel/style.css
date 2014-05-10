@@ -36,18 +36,22 @@ p { margin-bottom: 1em; }
 /*  Syntax Quick Reference -------------------------- column($ratios: 1, $offset: 0, $cycle: 0, $uncycle: 0, $gutter: $jeet-gutter) span($ratio: 1, $offset: 0) shift($ratios: 0, $col_or_span: column, $gutter: $jeet-gutter) unshift() edit() center($max_width: 1410px, $pad: 0) stack($pad: 0, $align: false) unstack() align($direction: both) cf()
 */
 /* ----------------------------------- --typography ----------------------------------- */
-h1 { font-family: "EB Garamond", serif; font-size: 4em; color: #fff; }
+h1 { font-family: "Lato", sans-serif; font-size: 6em; color: #fff; }
 
 h2 { font-family: "Lato", sans-serif; font-weight: 300; font-size: 3em; text-transform: uppercase; letter-spacing: .1em; display: inline-block; padding: 10px 20px; position: relative; background: #fff; -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); -moz-transform: translateY(-50%); -o-transform: translateY(-50%); transform: translateY(-50%); }
 
+h3 { font-family: "EB Garamond", serif; color: #fff; font-size: 2em; }
+
 /* ----------------------------------- --layout ----------------------------------- */
-.travel-container { width: 96%; max-width: 1260px; margin: 0 auto; position: relative; }
+.travel-container { width: 96%; max-width: 1260px; margin: 0 auto; *zoom: 1; }
+.travel-container:before, .travel-container:after { content: ''; display: table; }
+.travel-container:after { clear: both; }
 
-.full-height { height: 100%; }
+.full-height { height: 100%; position: relative; }
 
-section { padding: 40px 0; *zoom: 1; width: auto; max-width: 100%; float: none; display: block; margin-right: auto; margin-left: auto; padding-left: 0; padding-right: 0; }
-section:before, section:after { content: ''; display: table; }
-section:after { clear: both; }
+section, article { padding: 40px 0; *zoom: 1; width: auto; max-width: 100%; float: none; display: block; margin-right: auto; margin-left: auto; padding-left: 0; padding-right: 0; }
+section:before, section:after, article:before, article:after { content: ''; display: table; }
+section:after, article:after { clear: both; }
 
 .col-1-5 { *zoom: 1; float: left; display: inline; clear: none; text-align: inherit; padding-left: 0; padding-right: 0; width: 17.6%; margin-left: 0%; margin-right: 3%; }
 .col-1-5:before, .col-1-5:after { content: ''; display: table; }
@@ -75,6 +79,8 @@ section:after { clear: both; }
 
 .text-two-col { -webkit-column-count: 2; -ms-column-count: 2; -moz-column-count: 2; -o-column-count: 2; column-count: 2; -webkit-column-gap: 3%; -ms-column-gap: 3%; -moz-column-gap: 3%; -o-column-gap: 3%; column-gap: 3%; }
 
+.travel-content-row { margin-bottom: 3%; clear: both; }
+
 /* ----------------------------------- --header ----------------------------------- */
 .site-header { position: relative; background-repeat: no-repeat; background-position: center center; background-attachment: fixed; -webkit-background-size: cover; background-size: cover; }
 
@@ -82,6 +88,11 @@ section:after { clear: both; }
 .logo a span { color: #fff; border-top: 2px solid #fff; font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 18px; padding-top: 2px; }
 
 /* ----------------------------------- --captions ----------------------------------- */
+.header-caption { *zoom: 1; float: left; display: inline; clear: none; text-align: inherit; padding-left: 0; padding-right: 0; width: 58.8%; margin-left: 0%; margin-right: 3%; text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4); }
+.header-caption:before, .header-caption:after { content: ''; display: table; }
+.header-caption:after { clear: both; }
+.header-caption:last-child { margin-right: 0%; }
+
 .caption { font-family: "Lato", sans-serif; font-size: 0.8em; *zoom: 1; float: left; display: inline; clear: none; text-align: inherit; padding-left: 0; padding-right: 0; width: 38.2%; margin-left: 0%; margin-right: 3%; }
 .caption:before, .caption:after { content: ''; display: table; }
 .caption:after { clear: both; }
@@ -104,3 +115,6 @@ section:after { clear: both; }
 
 /* ----------------------------------- --sections ----------------------------------- */
 .section-header { text-align: center; border-top: 1px solid #ccc; }
+
+/* ----------------------------------- --footer ----------------------------------- */
+.site-footer { margin-top: 100px; background: #efefef; padding: 40px 0 100px 0; }

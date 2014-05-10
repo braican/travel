@@ -29,9 +29,6 @@ function travel_setup() {
         'primary' => __( 'Primary Menu', 'travel' ),
     ) );
 
-    // Enable support for Post Formats.
-    add_theme_support( 'post-formats', array( 'standard', 'image', 'video', 'quote', 'link' ) );
-
     // Enable support for HTML5 markup.
     add_theme_support( 'html5', array(
         'comment-list',
@@ -90,53 +87,51 @@ function save_travel_custom_options() {
     }
     return;
 }
-add_action('admin_head', 'save_travel_custom_options'); 
+add_action('admin_head', 'save_travel_custom_options');
 
 
-// the callback for the custom background
-function travel_custom_background_cb() {
-    // $background is the saved custom image, or the default image.
-    $background = set_url_scheme( get_background_image() );
+// ------------------------------
+// hackin the editor
+//
 
-    // $color is the saved custom color.
-    // A default has to be specified in style.css. It will not be printed here.
-    $color = get_background_color();
-
-    if ( $color === get_theme_support( 'custom-background', 'default-color' ) ) {
-        $color = false;
+// Add Formats Dropdown Menu To MCE
+if ( ! function_exists( 'wpex_style_select' ) ) {
+    function wpex_style_select( $buttons ) {
+        array_push( $buttons, 'styleselect' );
+        return $buttons;
     }
-
-    if ( ! $background && ! $color )
-        return;
-
-    $style = $color ? "background-color: #$color;" : '';
-
-    if ( $background ) {
-        $image = " background-image: url('$background');";
-
-        $repeat = get_theme_mod( 'background_repeat', get_theme_support( 'custom-background', 'default-repeat' ) );
-        if ( ! in_array( $repeat, array( 'no-repeat', 'repeat-x', 'repeat-y', 'repeat' ) ) )
-            $repeat = 'repeat';
-        $repeat = " background-repeat: $repeat;";
-
-        $position = get_theme_mod( 'background_position_x', get_theme_support( 'custom-background', 'default-position-x' ) );
-        if ( ! in_array( $position, array( 'center', 'right', 'left' ) ) )
-            $position = 'left';
-        $position = " background-position: top $position;";
-
-        $attachment = get_theme_mod( 'background_attachment', get_theme_support( 'custom-background', 'default-attachment' ) );
-        if ( ! in_array( $attachment, array( 'fixed', 'scroll' ) ) )
-            $attachment = 'scroll';
-        $attachment = " background-attachment: $attachment;";
-
-        $style .= $image . $repeat . $position . $attachment;
-    }
-?>
-<style type="text/css" id="custom-background-css">
-.site-header { <?php echo trim( $style ); ?> }
-</style>
-<?php
 }
+add_filter( 'mce_buttons', 'wpex_style_select' );
 
+// Add new styles to the TinyMCE "formats" menu dropdown
+if ( ! function_exists( 'wpex_styles_dropdown' ) ) {
+    function wpex_styles_dropdown( $settings ) {
+
+        // Create array of new styles
+        $new_styles = array(
+            array(
+                'title' => __( 'Sidebars', 'wpex' ),
+                'items' => array(
+                    array(
+                        'title'     => __('Sidebar','wpex'),
+                        'inline'  => 'span',
+                        'classes'   => 'sidebar'
+                    )
+                ),
+            ),
+        );
+
+        // DONT merge old & new styles
+        $settings['style_formats_merge'] = false;
+
+        // Add new styles
+        $settings['style_formats'] = json_encode( $new_styles );
+
+        // Return New Settings
+        return $settings;
+
+    }
+}
+add_filter( 'tiny_mce_before_init', 'wpex_styles_dropdown' );
 
 ?>

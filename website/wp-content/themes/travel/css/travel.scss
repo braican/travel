@@ -30,8 +30,8 @@ $serif: 'EB Garamond', serif;
  * --typography
  * ----------------------------------- */
 h1{
-    font-family: $serif;
-    font-size:4em;
+    font-family: $sans-serif;
+    font-size:6em;
     color: #fff;
 }
 
@@ -48,6 +48,12 @@ h2{
     @include jeet-prefixer(transform, translateY(-50%));
 }
 
+h3{
+    font-family: $serif;
+    color: #fff;
+    font-size: 2em;
+}
+
 /* -----------------------------------
  * --layout
  * ----------------------------------- */
@@ -56,14 +62,16 @@ h2{
     width: 96%;
     max-width: 1260px;
     margin: 0 auto;
-    position: relative;
+    @include cf();
 }
 
 .full-height{
     height: 100%;
+    position: relative;
 }
 
-section{
+section,
+article{
     padding: 40px 0;
     @include center(100%);
 }
@@ -91,6 +99,11 @@ section{
 .text-two-col{
     @include jeet-prefixer(column-count, 2);
     @include jeet-prefixer(column-gap, 3%);
+}
+
+.travel-content-row{
+    margin-bottom: 3%;
+    clear:both;
 }
 
 /* -----------------------------------
@@ -125,7 +138,10 @@ section{
 /* -----------------------------------
  * --captions
  * ----------------------------------- */
-
+.header-caption{
+    @include col(3/5);
+    text-shadow: 2px 2px 8px rgba(0,0,0,.4);
+}
 .caption{
     font-family: $sans-serif;
     font-size: 0.8em;
@@ -175,5 +191,12 @@ section{
     border-top: 1px solid #ccc;
 }
 
+/* -----------------------------------
+ * --footer
+ * ----------------------------------- */
 
-
+.site-footer{
+    margin-top: 100px;
+    background: #efefef;
+    padding: 40px 0 100px 0;
+}

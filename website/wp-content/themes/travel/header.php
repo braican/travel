@@ -18,8 +18,10 @@
             <div class="logo">
                 <a href="http://braican.com"><span>nb</span></a>
             </div>
-            <div class="caption inline-caption">
-                <h1 class="site-title"><?php bloginfo( 'description' ); ?></h1>
+            <div class="header-caption inline-caption">
+
+                <h1 class="site-title"><?php bloginfo( 'title' ); ?></h1>
+                <h3 class="site-title"><?php bloginfo( 'description' ); ?></h3>
             </div>
         </div>
     </header><!-- .site-header -->
