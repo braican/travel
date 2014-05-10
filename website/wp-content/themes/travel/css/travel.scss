@@ -32,7 +32,6 @@ $serif: 'EB Garamond', serif;
 h1{
     font-family: $serif;
     font-size:4em;
-    font-style: italic;
     color: #fff;
 }
 
@@ -54,7 +53,7 @@ h2{
  * ----------------------------------- */
 
 .travel-container{
-    width: 100%;
+    width: 96%;
     max-width: 1260px;
     margin: 0 auto;
     position: relative;
@@ -83,7 +82,7 @@ section{
 }
 
 .align-right{
-    text-align: right
+    text-align: right;
 }
 
 .text-one-col{
@@ -121,6 +120,7 @@ section{
         padding-top: 2px;
     }
 }
+
 
 /* -----------------------------------
  * --captions

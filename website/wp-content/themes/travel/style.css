@@ -36,12 +36,12 @@ p { margin-bottom: 1em; }
 /*  Syntax Quick Reference -------------------------- column($ratios: 1, $offset: 0, $cycle: 0, $uncycle: 0, $gutter: $jeet-gutter) span($ratio: 1, $offset: 0) shift($ratios: 0, $col_or_span: column, $gutter: $jeet-gutter) unshift() edit() center($max_width: 1410px, $pad: 0) stack($pad: 0, $align: false) unstack() align($direction: both) cf()
 */
 /* ----------------------------------- --typography ----------------------------------- */
-h1 { font-family: "EB Garamond", serif; font-size: 4em; font-style: italic; color: #fff; }
+h1 { font-family: "EB Garamond", serif; font-size: 4em; color: #fff; }
 
 h2 { font-family: "Lato", sans-serif; font-weight: 300; font-size: 3em; text-transform: uppercase; letter-spacing: .1em; display: inline-block; padding: 10px 20px; position: relative; background: #fff; -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); -moz-transform: translateY(-50%); -o-transform: translateY(-50%); transform: translateY(-50%); }
 
 /* ----------------------------------- --layout ----------------------------------- */
-.travel-container { width: 100%; max-width: 1260px; margin: 0 auto; position: relative; }
+.travel-container { width: 96%; max-width: 1260px; margin: 0 auto; position: relative; }
 
 .full-height { height: 100%; }
 

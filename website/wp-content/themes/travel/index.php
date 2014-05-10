@@ -1,31 +1,4 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Travel</title>
-    
-    <link href='http://fonts.googleapis.com/css?family=Lato:300|EB+Garamond|Raleway:700' rel='stylesheet' type='text/css'>
-    <!-- <link rel="stylesheet" href="css/build/travel.css"> -->
-    <link rel="stylesheet" href="style.css">
-
-</head>
-<body>
-
-    <header class="site-header full-height" style="background-image: url(img/build/header.jpg);">
-        <div class="travel-container full-height">
-            <div class="logo">
-                <a href="http://braican.com"><span>nb</span></a>
-            </div>
-            <div class="caption inline-caption">
-                <h1 class="site-title">A little place called New Orleans</h1>
-            </div>
-        </div>
-    </header><!-- .site-header -->
-    <section class="travel-container">
-        <div class="caption align-right">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, id, eveniet, est, veritatis dolore vel possimus eius ipsam sit praesentium sed ea suscipit dolores enim voluptas autem doloremque quas necessitatibus?</p>
-        </div>
-    </section><!-- section -->
+<?php get_header(); ?>
     
 
     <section class="travel-container">
@@ -42,15 +15,12 @@
             
             <p>Natus, odio, quibusdam neque dolor voluptates sunt nihil rerum inventore quos eligendi nisi illum totam exercitationem id delectus ducimus numquam saepe illo aut harum at aperiam sit nesciunt. Rerum, saepe.</p>
         </div>
-
-        
     </section>
-
 
 
     <section class="full-width-image">
         <div class="image-container">
-            <img src="img/placeholder.jpg" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>/img/placeholder.jpg" alt="">
         </div>
         
         <div class="travel-container">            
@@ -66,7 +36,7 @@
         </div>
 
         <div class="image-container col-3-5">
-            <img src="img/placeholder.jpg" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>/img/placeholder.jpg" alt="">
         </div>
     </section>
 
@@ -75,17 +45,15 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, id, eveniet, est, veritatis dolore vel possimus eius ipsam sit praesentium sed ea suscipit dolores enim voluptas autem doloremque quas necessitatibus?</p>
         </div>
         <div class="image-container col col-2-5">
-            <img src="img/placeholder.jpg" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>/img/placeholder.jpg" alt="">
         </div>
 
         <div class="col-2-5">
             <div class="image-container">
-                <img src="img/placeholder.jpg" alt="">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/placeholder.jpg" alt="">
             </div>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, id, eveniet, est, veritatis dolore vel possimus eius ipsam sit praesentium sed ea suscipit dolores enim voluptas autem doloremque quas necessitatibus?</p>
         </div>
     </section>
     
-
-</body>
-</html>
+<?php get_footer(); ?>
