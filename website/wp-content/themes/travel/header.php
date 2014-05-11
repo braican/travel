@@ -26,7 +26,7 @@
         </div>
     </header><!-- .site-header -->
     <section class="travel-container">
-        <div class="caption align-right">
+        <div class="caption align-right banner-image-caption">
             <p><?php echo get_theme_mod( 'banner_image_caption', '' ); ?></p>
         </div>
     </section><!-- section -->

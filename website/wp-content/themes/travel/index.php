@@ -2,6 +2,7 @@
 
     <?php if ( have_posts() ) : ?>
 
+
         <?php /* Start the Loop */ ?>
         <?php while ( have_posts() ) : the_post(); ?>
 
@@ -14,6 +15,19 @@
                 <div class="travel-content-row travel-container">
                     <div class="col-3-5 text-one-col">
                         <?php the_content(); ?>
+
+                        <?php if(is_main_site()) : ?>
+                            <?php if($site_list = get_blog_list( 0, 'all' ) ) : ?>
+                                <ul id="site-selector">
+                                <?php foreach ($site_list as $site) : ?>
+                                    <?php if($site['path'] !== '/') : ?>
+                                        <?php $site_info = get_blog_details($site["blog_id"]); ?>
+                                        <li><a href="<?php echo $site_info->siteurl; ?>"><?php echo $site_info->blogname; ?></a></li>
+                                    <?php endif; ?>
+                                <?php endforeach; ?>
+                                </ul>
+                            <?php endif; ?>
+                        <?php endif; ?>
                     </div>
                 </div>
                 <?php endif; ?>
@@ -24,7 +38,6 @@
                         <?php if(get_sub_field('travel_row_type') === "images" ) : ?>
 
                             <?php $the_images = get_sub_field('travel_images'); ?>
-
                             <?php if(count($the_images) == 1 && $the_images[0]['travel_image_size'] === "fullwidth" ) : ?>
                                 <?php while(have_rows('travel_images')) : the_row(); ?>
                                     <div class="image-container <?php the_sub_field('travel_image_size') ?>">
@@ -51,6 +64,8 @@
                         </div>
                     <?php endwhile; ?>
                 <?php endif; ?>
+
+
 
             </article><!-- #post-## -->
 

@@ -134,4 +134,139 @@ if ( ! function_exists( 'wpex_styles_dropdown' ) ) {
 }
 add_filter( 'tiny_mce_before_init', 'wpex_styles_dropdown' );
 
+
+// ---------------------------------
+// ADVANCED CUSTOM FIELDS
+//
+
+if(function_exists("register_field_group"))
+{
+    register_field_group(array (
+        'id' => 'acf_photoset',
+        'title' => 'Photoset',
+        'fields' => array (
+            array (
+                'key' => 'field_536e90425964b',
+                'label' => 'Content Row',
+                'name' => 'travel_rows',
+                'type' => 'repeater',
+                'instructions' => 'Add a row of images. Be sure that the dimensions for each add up to 1.',
+                'sub_fields' => array (
+                    array (
+                        'key' => 'field_536e98ec63c2c',
+                        'label' => 'Row Type',
+                        'name' => 'travel_row_type',
+                        'type' => 'radio',
+                        'column_width' => '',
+                        'choices' => array (
+                            'images' => 'Images',
+                            'text' => 'Text',
+                        ),
+                        'other_choice' => 0,
+                        'save_other_choice' => 0,
+                        'default_value' => '',
+                        'layout' => 'vertical',
+                    ),
+                    array (
+                        'key' => 'field_536e904a5964c',
+                        'label' => 'Images',
+                        'name' => 'travel_images',
+                        'type' => 'repeater',
+                        'conditional_logic' => array (
+                            'status' => 1,
+                            'rules' => array (
+                                array (
+                                    'field' => 'field_536e98ec63c2c',
+                                    'operator' => '==',
+                                    'value' => 'images',
+                                ),
+                            ),
+                            'allorany' => 'all',
+                        ),
+                        'column_width' => '',
+                        'sub_fields' => array (
+                            array (
+                                'key' => 'field_536e969ab757e',
+                                'label' => 'Image',
+                                'name' => 'travel_image',
+                                'type' => 'image',
+                                'column_width' => '',
+                                'save_format' => 'url',
+                                'preview_size' => 'thumbnail',
+                                'library' => 'all',
+                            ),
+                            array (
+                                'key' => 'field_536e96b8b757f',
+                                'label' => 'Image Size',
+                                'name' => 'travel_image_size',
+                                'type' => 'select',
+                                'required' => 1,
+                                'column_width' => '',
+                                'choices' => array (
+                                    'col-1-5' => '1/5',
+                                    'col-2-5' => '2/5',
+                                    'col-3-5' => '3/5',
+                                    'col-4-5' => '4/5',
+                                    'fullwidth' => 'Full width',
+                                ),
+                                'default_value' => '',
+                                'allow_null' => 0,
+                                'multiple' => 0,
+                            ),
+                        ),
+                        'row_min' => '',
+                        'row_limit' => '',
+                        'layout' => 'table',
+                        'button_label' => 'Add Image',
+                    ),
+                    array (
+                        'key' => 'field_536e991763c2d',
+                        'label' => 'Text',
+                        'name' => 'travel_text',
+                        'type' => 'wysiwyg',
+                        'conditional_logic' => array (
+                            'status' => 1,
+                            'rules' => array (
+                                array (
+                                    'field' => 'field_536e98ec63c2c',
+                                    'operator' => '==',
+                                    'value' => 'text',
+                                ),
+                            ),
+                            'allorany' => 'all',
+                        ),
+                        'column_width' => '',
+                        'default_value' => '',
+                        'toolbar' => 'full',
+                        'media_upload' => 'yes',
+                    ),
+                ),
+                'row_min' => '',
+                'row_limit' => '',
+                'layout' => 'table',
+                'button_label' => 'Add Row',
+            ),
+        ),
+        'location' => array (
+            array (
+                array (
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'post',
+                    'order_no' => 0,
+                    'group_no' => 0,
+                ),
+            ),
+        ),
+        'options' => array (
+            'position' => 'normal',
+            'layout' => 'no_box',
+            'hide_on_screen' => array (
+            ),
+        ),
+        'menu_order' => 0,
+    ));
+}
+
+
 ?>
