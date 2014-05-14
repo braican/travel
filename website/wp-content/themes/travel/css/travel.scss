@@ -178,7 +178,6 @@ article{
     left: 0;
 }
 .align-right{
-    text-align:right;
     @include shift(4/5);
 }
 .image-container + .row-caption{

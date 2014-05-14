@@ -105,7 +105,7 @@ article:after { clear: both; }
 
 .inline-caption { position: absolute !important; bottom: 100px; left: 0; }
 
-.align-right { text-align: right; position: relative; left: 82.4%; }
+.align-right { position: relative; left: 82.4%; }
 
 .image-container + .row-caption { margin-top: 10px; }
 
