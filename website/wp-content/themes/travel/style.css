@@ -104,6 +104,8 @@ article:after { clear: both; }
 
 .align-right { text-align: right; position: relative; left: 61.8%; }
 
+.image-container + .row-caption { margin-top: 10px; }
+
 /* ----------------------------------- --sidebar ----------------------------------- */
 .sidebar { display: none; *zoom: 1; float: left; display: inline; clear: none; text-align: inherit; padding-left: 0; padding-right: 0; width: 31.33333%; margin-left: 0%; margin-right: 3%; font-family: "Lato", sans-serif; font-size: 0.8em; position: absolute; left: -35%; }
 .sidebar:before, .sidebar:after { content: ''; display: table; }
@@ -112,7 +114,7 @@ article:after { clear: both; }
 
 @media only screen and (min-width: 800px) { .sidebar { display: inline; } }
 /* ----------------------------------- --images ----------------------------------- */
-.image-container img { width: 100%; height: auto; }
+.image-container img { width: 100%; height: auto; display: block; }
 
 .full-width-image { position: relative; }
 

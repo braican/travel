@@ -182,10 +182,13 @@ article{
     bottom: 100px;
     left: 0;
 }
-
 .align-right{
     text-align:right;
     @include shift(3/5);
+}
+
+.image-container + .row-caption{
+    margin-top: 10px;
 }
 
 /* -----------------------------------
@@ -212,6 +215,7 @@ article{
 .image-container img{
     width: 100%;
     height: auto;
+    display: block;
 }
 
 .full-width-image{

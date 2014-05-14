@@ -138,7 +138,6 @@ add_filter( 'tiny_mce_before_init', 'wpex_styles_dropdown' );
 // ---------------------------------
 // ADVANCED CUSTOM FIELDS
 //
-
 if(function_exists("register_field_group"))
 {
     register_field_group(array (
@@ -196,6 +195,16 @@ if(function_exists("register_field_group"))
                                 'library' => 'all',
                             ),
                             array (
+                                'key' => 'field_5372df738a898',
+                                'label' => 'Image Caption',
+                                'name' => 'travel_image_caption',
+                                'type' => 'wysiwyg',
+                                'column_width' => '',
+                                'default_value' => '',
+                                'toolbar' => 'full',
+                                'media_upload' => 'yes',
+                            ),
+                            array (
                                 'key' => 'field_536e96b8b757f',
                                 'label' => 'Image Size',
                                 'name' => 'travel_image_size',
@@ -207,7 +216,8 @@ if(function_exists("register_field_group"))
                                     'col-2-5' => '2/5',
                                     'col-3-5' => '3/5',
                                     'col-4-5' => '4/5',
-                                    'fullwidth' => 'Full width',
+                                    'col-5-5' => 'Full row',
+                                    'fullwidth' => 'Full screen width',
                                 ),
                                 'default_value' => '',
                                 'allow_null' => 0,
@@ -243,7 +253,7 @@ if(function_exists("register_field_group"))
                 ),
                 'row_min' => '',
                 'row_limit' => '',
-                'layout' => 'table',
+                'layout' => 'row',
                 'button_label' => 'Add Row',
             ),
         ),

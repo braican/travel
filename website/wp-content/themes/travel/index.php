@@ -38,18 +38,70 @@
                         <?php if(get_sub_field('travel_row_type') === "images" ) : ?>
 
                             <?php $the_images = get_sub_field('travel_images'); ?>
+                            <?php // if there's only one image and it's full width ?>
                             <?php if(count($the_images) == 1 && $the_images[0]['travel_image_size'] === "fullwidth" ) : ?>
                                 <?php while(have_rows('travel_images')) : the_row(); ?>
                                     <div class="image-container <?php the_sub_field('travel_image_size') ?>">
                                         <img src="<?php the_sub_field('travel_image'); ?>">
                                     </div>
                                 <?php endwhile; ?>
+
                             <?php else : ?>
                                 <div class="travel-container">
                                 <?php while(have_rows('travel_images')) : the_row(); ?>
-                                    <div class="image-container <?php the_sub_field('travel_image_size') ?>">
-                                        <img src="<?php the_sub_field('travel_image'); ?>">
-                                    </div>
+                                    <?php $row_size = get_sub_field('travel_image_size'); ?>
+                                    <?php if(get_sub_field('travel_image_caption')) : ?>
+                                        <?php if($row_size == 'col-3-5') : ?>
+                                            <div class="col-1-5">
+                                                <div class="row-caption">
+                                                    <?php the_sub_field('travel_image_caption'); ?>
+                                                </div>
+                                            </div>
+                                            <div class="col-2-5">
+                                                <div class="image-container">
+                                                    <img src="<?php the_sub_field('travel_image'); ?>">
+                                                </div>
+                                            </div>
+                                        <?php elseif($row_size == 'col-4-5') : ?>
+                                            <div class="col-1-5">
+                                                <div class="row-caption">
+                                                    <?php the_sub_field('travel_image_caption'); ?>
+                                                </div>
+                                            </div>
+                                            <div class="col-3-5">
+                                                <div class="image-container">
+                                                    <img src="<?php the_sub_field('travel_image'); ?>">
+                                                </div>
+                                            </div>
+                                        <?php elseif($row_size == 'col-5-5') : ?>
+                                            <div class="col-2-5">
+                                                <div class="row-caption">
+                                                    <?php the_sub_field('travel_image_caption'); ?>
+                                                </div>
+                                            </div>
+                                            <div class="col-3-5">
+                                                <div class="image-container">
+                                                    <img src="<?php the_sub_field('travel_image'); ?>">
+                                                </div>
+                                            </div>
+                                        <?php else : ?>
+                                            <div class="<?php echo $row_size; ?>">
+                                                <div class="image-container">
+                                                    <img src="<?php the_sub_field('travel_image'); ?>">
+                                                </div>
+                                                <div class="row-caption">
+                                                    <?php the_sub_field('travel_image_caption'); ?>
+                                                </div>
+                                            </div>
+                                        <?php endif; ?>
+                                    <?php else : ?>
+                                        <div class="<?php echo $row_size; ?>">
+                                            <div class="image-container">
+                                                <img src="<?php the_sub_field('travel_image'); ?>">
+                                            </div>
+                                        </div>
+                                    <?php endif; ?>
+                                    
                                 <?php endwhile; ?>
                                 </div>
                             <?php endif; ?>
