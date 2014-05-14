@@ -89,6 +89,16 @@ function save_travel_custom_options() {
 }
 add_action('admin_head', 'save_travel_custom_options');
 
+// ------------------------------
+// modify the main query
+//
+function travel_modify_main_query( $query ) {
+    $query->query_vars['order'] = 'ASC';
+    $query->query_vars['posts_per_page'] = -1; // show all posts
+}
+add_action( 'pre_get_posts', 'travel_modify_main_query' );
+
+
 
 // ------------------------------
 // hackin the editor
