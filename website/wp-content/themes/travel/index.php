@@ -50,7 +50,7 @@
                                 <div class="travel-container">
                                 <?php while(have_rows('travel_images')) : the_row(); ?>
                                     <?php $row_size = get_sub_field('travel_image_size'); ?>
-                                    <?php if(get_sub_field('travel_image_caption')) : ?>
+                                    <?php if(get_sub_field('travel_image_caption') && get_sub_field('travel_image')) : ?>
                                         <?php if($row_size == 'col-3-5') : ?>
                                             <div class="col-1-5">
                                                 <div class="row-caption">
@@ -94,10 +94,16 @@
                                                 </div>
                                             </div>
                                         <?php endif; ?>
-                                    <?php else : ?>
+                                    <?php elseif(get_sub_field('travel_image')) : ?>
                                         <div class="<?php echo $row_size; ?>">
                                             <div class="image-container">
                                                 <img src="<?php the_sub_field('travel_image'); ?>">
+                                            </div>
+                                        </div>
+                                    <?php elseif(get_sib_field('travel_image_caption')) : ?>
+                                        <div class="<?php echo $row_size; ?>">
+                                            <div class="row-caption">
+                                                <?php the_sub_field('travel_image_caption'); ?>
                                             </div>
                                         </div>
                                     <?php endif; ?>
