@@ -39,16 +39,13 @@ h1{
 h2{
     font-family: $sans-serif;
     font-weight: 300;
-    font-size: 1.5em;
+    font-size: 2em;
     text-transform: uppercase;
+    text-align: center;
     letter-spacing:.1em;
-    display: inline-block;
-    padding: 20px;
-    margin-bottom: 10px;
-    position: relative;
     background: #fff;
-    margin-bottom: 40px;
-    
+    margin-bottom: 60px;
+    border-top: 1px solid #ccc;        
 }
 
 h3{
@@ -71,8 +68,8 @@ a:hover{
     }
     h2{
         font-size: 3em;
-        margin-bottom: 0;
-        @include jeet-prefixer(transform, translateY(-50%));
+        text-align: left;
+        @include col(4/5);
     }
     h3{
         font-size: 2em;
@@ -99,7 +96,6 @@ article{
     padding: 40px 0;
     @include center(100%);
 }
-
 
 .travel-content-row{
     margin-bottom: 3%;
@@ -222,14 +218,6 @@ article{
     position: relative;
 }
 
-/* -----------------------------------
- * --sections
- * ----------------------------------- */
-
-.section-header{
-    text-align: center;
-    border-top: 1px solid #ccc;
-}
 
 /* -----------------------------------
  * --footer

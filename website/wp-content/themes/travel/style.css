@@ -38,7 +38,7 @@ p { margin-bottom: 1em; }
 /* ----------------------------------- --typography ----------------------------------- */
 h1 { font-family: "Lato", sans-serif; font-size: 2em; line-height: 1em; color: #fff; }
 
-h2 { font-family: "Lato", sans-serif; font-weight: 300; font-size: 1.5em; text-transform: uppercase; letter-spacing: .1em; display: inline-block; padding: 20px; margin-bottom: 10px; position: relative; background: #fff; margin-bottom: 40px; }
+h2 { font-family: "Lato", sans-serif; font-weight: 300; font-size: 2em; text-transform: uppercase; text-align: center; letter-spacing: .1em; background: #fff; margin-bottom: 60px; border-top: 1px solid #ccc; }
 
 h3 { font-family: "EB Garamond", serif; color: #fff; font-size: 1em; }
 
@@ -47,7 +47,10 @@ a { color: #333; -webkit-transition: all 0.5s; -ms-transition: all 0.5s; -moz-tr
 a:hover { color: #000; }
 
 @media only screen and (min-width: 800px) { h1 { font-size: 6em; }
-  h2 { font-size: 3em; margin-bottom: 0; -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); -moz-transform: translateY(-50%); -o-transform: translateY(-50%); transform: translateY(-50%); }
+  h2 { font-size: 3em; text-align: left; *zoom: 1; float: left; display: inline; clear: none; text-align: inherit; padding-left: 0; padding-right: 0; width: 79.4%; margin-left: 0%; margin-right: 3%; }
+  h2:before, h2:after { content: ''; display: table; }
+  h2:after { clear: both; }
+  h2:last-child { margin-right: 0%; }
   h3 { font-size: 2em; } }
 /* ----------------------------------- --layout ----------------------------------- */
 .travel-container { width: 96%; max-width: 1260px; margin: 0 auto; *zoom: 1; }
@@ -117,9 +120,6 @@ article:after { clear: both; }
 .image-container img { width: 100%; height: auto; display: block; }
 
 .full-width-image { position: relative; }
-
-/* ----------------------------------- --sections ----------------------------------- */
-.section-header { text-align: center; border-top: 1px solid #ccc; }
 
 /* ----------------------------------- --footer ----------------------------------- */
 .site-footer { margin-top: 100px; background: #efefef; padding: 40px 0 100px 0; }
