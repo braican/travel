@@ -47,7 +47,6 @@ h2{
     margin-bottom: 60px;
     border-top: 1px solid #ccc;        
 }
-
 h3{
     font-family: $serif;
     color: #fff;
@@ -168,7 +167,7 @@ article{
 .caption{
     font-family: $sans-serif;
     font-size: 0.8em;
-    @include col(2/5);
+    @include col(1/5);
 }
 .banner-image-caption{
     padding: 20px 0;
@@ -180,9 +179,8 @@ article{
 }
 .align-right{
     text-align:right;
-    @include shift(3/5);
+    @include shift(4/5);
 }
-
 .image-container + .row-caption{
     margin-top: 10px;
 }

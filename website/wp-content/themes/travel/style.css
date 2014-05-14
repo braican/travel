@@ -96,7 +96,7 @@ article:after { clear: both; }
 .header-caption:after { clear: both; }
 .header-caption:last-child { margin-right: 0%; }
 
-.caption { font-family: "Lato", sans-serif; font-size: 0.8em; *zoom: 1; float: left; display: inline; clear: none; text-align: inherit; padding-left: 0; padding-right: 0; width: 38.2%; margin-left: 0%; margin-right: 3%; }
+.caption { font-family: "Lato", sans-serif; font-size: 0.8em; *zoom: 1; float: left; display: inline; clear: none; text-align: inherit; padding-left: 0; padding-right: 0; width: 17.6%; margin-left: 0%; margin-right: 3%; }
 .caption:before, .caption:after { content: ''; display: table; }
 .caption:after { clear: both; }
 .caption:last-child { margin-right: 0%; }
@@ -105,7 +105,7 @@ article:after { clear: both; }
 
 .inline-caption { position: absolute !important; bottom: 100px; left: 0; }
 
-.align-right { text-align: right; position: relative; left: 61.8%; }
+.align-right { text-align: right; position: relative; left: 82.4%; }
 
 .image-container + .row-caption { margin-top: 10px; }
 
