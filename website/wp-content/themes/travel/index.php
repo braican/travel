@@ -9,9 +9,11 @@
             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                 <header class="section-header travel-container">
                     <?php the_title( '<h2>', '</h2>' ); ?>
+                    <?php if(!is_main_site()) : ?>
                     <div class="col-1-5">
                         <time class="entry-date published" datetime="<?php echo get_the_date( 'c' ); ?>"><?php echo get_the_date(); ?></time>
                     </div>
+                    <?php endif; ?>
                 </header><!-- .section-header -->
                 
                 <?php if($content = get_the_content()) : ?>
